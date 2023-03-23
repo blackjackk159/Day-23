@@ -4,7 +4,7 @@ const postSchema = new mongoose.Schema({
   user: String,
   content: String,
   tags: [{ String }],
-  type: String,
+  type: { type: String },
 });
 
 const Post = mongoose.model("Post", postSchema);

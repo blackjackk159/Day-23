@@ -1,5 +1,7 @@
+const appError = require("./appError")
+
 // Custom Error
-const customErrorHandler = () => new AppError(`Your Error Message...`, 400);
+const customErrorHandler = () => new appError(`Your Error Message...`, 400);
 
 // Handle dev error
 const devErrorHandler = (err, req, res) => {

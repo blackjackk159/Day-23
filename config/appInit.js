@@ -1,7 +1,14 @@
+require("dotenv").config();
 require("./dbInit");
-const app = require("express")();
+const express = require("express");
+const app = express();
 const postRoutes = require("../routes/post");
 const errorHandler = require("../utils/errorHandler");
+
+// Body parser
+app.use(express.json()); //to JSON
+app.use(express.urlencoded({ extended: true })); //recognize strings or arrays
+
 app.use("/posts", postRoutes);
 
 // error handler
